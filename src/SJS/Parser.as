@@ -42,9 +42,9 @@
   
 */
 
-package org.sixsided.scripting.SJS {
+package SJS {
     
-  import org.sixsided.util.ANSI;
+  import SJS.ANSI;
     
   public class Parser {
 
@@ -105,7 +105,7 @@ package org.sixsided.scripting.SJS {
         public function codegen(src:String = null):Array{
           if(src) { parse(src); }
           
-          log("##### CODE GENERATION ####\n", JSON.stringify(ast));
+          //log("##### CODE GENERATION ####\n", JSON.stringify(ast));
           
           generated_code = [];
           C(ast);
@@ -216,10 +216,10 @@ package org.sixsided.scripting.SJS {
       var a:int = line_start(line_start(t.from) - 1);
       var z:int = line_end(line_end(t.to) + 1);
       
-      const ansi_escape:String = ANSI.RED + ANSI.INVERT;
-      var dupe:String = source_code.substring(0, t.from) + ansi_escape + source_code.substring(t.from, t.to) + ANSI.NORMAL + source_code.substring(t.to);
+      const ansi_escape:String = ANSI.RED_TEXT + ANSI.INVERT_BACKGROUND;
+      var dupe:String = source_code.substring(0, t.from) + ansi_escape + source_code.substring(t.from, t.to) + ANSI.NORMAL_BACKGROUND + source_code.substring(t.to);
             
-      return dupe.substring(a, z+(ansi_escape + ANSI.NORMAL).length);
+      return dupe.substring(a, z+(ansi_escape + ANSI.NORMAL_BACKGROUND).length);
       
     }
       

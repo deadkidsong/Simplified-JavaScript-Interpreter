@@ -1,4 +1,4 @@
-package org.sixsided.scripting.SJS {
+package SJS {
 
   // tokens.js
   // 2007-08-05
