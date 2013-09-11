@@ -9,7 +9,7 @@ package
 		public static var stat:int = 255; 
 		
 		public static function getName():String {
-			return "sex";
+			return "John";
 		}
 		
 		public function TempUtils() 
